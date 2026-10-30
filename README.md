@@ -39,7 +39,6 @@
 │   ├── validators/
 │   └── app.js
 │   ├── server.js
-├── public/
 ├── .gitignore
 ├── .prettierignore
 ├── .prettierrc
