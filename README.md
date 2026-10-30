@@ -62,18 +62,49 @@ cd 04_propel
 npm install
 ```
 
-### 3. Configure environment variables
+### 3. Configure Environment Variables
 
-Create a `.env` file in the root directory.
+Create a `.env` file in the root directory and configure the following environment variables:
 
 ```env
+# Server Configuration
 PORT=8000
+CORS_ORIGIN=*
+
+# Database Configuration
 MONGODB_URI=your_mongodb_connection_string
+
+# JWT Authentication
 ACCESS_TOKEN_SECRET=your_access_token_secret
 ACCESS_TOKEN_EXPIRY=1d
+
 REFRESH_TOKEN_SECRET=your_refresh_token_secret
 REFRESH_TOKEN_EXPIRY=10d
+
+# Mailtrap SMTP Configuration
+MAILTRAP_SMTP_HOST=sandbox.smtp.mailtrap.io
+MAILTRAP_SMTP_PORT=your_smtp_port
+MAILTRAP_SMTP_USER=your_mailtrap_username
+MAILTRAP_SMTP_PASS=your_mailtrap_password
 ```
+
+**Environment Variable Description**
+
+| Variable               | Description                           |
+| ---------------------- | ------------------------------------- |
+| `PORT`                 | Port on which the server runs         |
+| `CORS_ORIGIN`          | Allowed frontend origin               |
+| `MONGODB_URI`          | MongoDB database connection string    |
+| `ACCESS_TOKEN_SECRET`  | Secret key for signing access tokens  |
+| `ACCESS_TOKEN_EXPIRY`  | Access token expiration duration      |
+| `REFRESH_TOKEN_SECRET` | Secret key for signing refresh tokens |
+| `REFRESH_TOKEN_EXPIRY` | Refresh token expiration duration     |
+| `MAILTRAP_SMTP_HOST`   | Mailtrap SMTP server hostname         |
+| `MAILTRAP_SMTP_PORT`   | Mailtrap SMTP server port             |
+| `MAILTRAP_SMTP_USER`   | Mailtrap SMTP username                |
+| `MAILTRAP_SMTP_PASS`   | Mailtrap SMTP password                |
+
+**Note:** Replace all placeholder values with your actual credentials. Never commit your `.env` file or expose your database credentials and JWT secrets publicly.
 
 ### 4. Start the development server
 
